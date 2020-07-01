@@ -79,13 +79,12 @@
 		5F33E71D24ACCEC0004C0508 /* IBMChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				5F33E71E24ACCEC0004C0508 /* AppDelegate.swift */,
-				5F33E72024ACCEC0004C0508 /* SceneDelegate.swift */,
-				5F33E72224ACCEC0004C0508 /* ViewController.swift */,
-				5F33E72424ACCEC0004C0508 /* Main.storyboard */,
-				5F33E72724ACCEC3004C0508 /* Assets.xcassets */,
-				5F33E72924ACCEC3004C0508 /* LaunchScreen.storyboard */,
-				5F33E72C24ACCEC3004C0508 /* Info.plist */,
+				5F33E74824ACD167004C0508 /* AppDelegate */,
+				5F33E74524ACD0F5004C0508 /* ViewModel */,
+				5F33E74424ACD0EA004C0508 /* Model */,
+				5F33E74224ACD0CB004C0508 /* Services */,
+				5F33E74124ACD0BE004C0508 /* Resources */,
+				5F33E74024ACD0AA004C0508 /* View */,
 			);
 			path = IBMChallenge;
 			sourceTree = "<group>";
@@ -97,6 +96,71 @@
 				5F33E73724ACCEC3004C0508 /* Info.plist */,
 			);
 			path = IBMChallengeTests;
+			sourceTree = "<group>";
+		};
+		5F33E74024ACD0AA004C0508 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E72224ACCEC0004C0508 /* ViewController.swift */,
+				5F33E74624ACD100004C0508 /* Layout */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F33E74124ACD0BE004C0508 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E72C24ACCEC3004C0508 /* Info.plist */,
+				5F33E74724ACD113004C0508 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F33E74224ACD0CB004C0508 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5F33E74424ACD0EA004C0508 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F33E74524ACD0F5004C0508 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F33E74624ACD100004C0508 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E72424ACCEC0004C0508 /* Main.storyboard */,
+				5F33E72924ACCEC3004C0508 /* LaunchScreen.storyboard */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		5F33E74724ACD113004C0508 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E72724ACCEC3004C0508 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5F33E74824ACD167004C0508 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E71E24ACCEC0004C0508 /* AppDelegate.swift */,
+				5F33E72024ACCEC0004C0508 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,17 +426,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSD6NA874L;
-				INFOPLIST_FILE = IBMChallenge/Info.plist;
+				INFOPLIST_FILE = IBMChallenge/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ruyther.IBMChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -380,17 +446,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSD6NA874L;
-				INFOPLIST_FILE = IBMChallenge/Info.plist;
+				INFOPLIST_FILE = IBMChallenge/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ruyther.IBMChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
