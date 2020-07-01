@@ -21,6 +21,7 @@ class EventsListViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
         
         showActivity()
         eventsListViewModel.getEvents { [weak self] events in
@@ -59,8 +60,9 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventTableViewCell
         let cellData = eventsListViewModel.events[indexPath.row]
         
-        cell.labelOne.text = cellData.title
-        cell.labelTwo.text = cellData.description
+        cell.titleLbl.text = cellData.title
+        cell.descriptionLbl.text = cellData.description
+        cell.getImageFromURL(url: NSURL(string: cellData.image ?? "")! as URL)
         
         return cell
     }

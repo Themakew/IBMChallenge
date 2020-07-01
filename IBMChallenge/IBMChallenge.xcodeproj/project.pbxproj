@@ -19,6 +19,7 @@
 		5F33E74E24ACEEC4004C0508 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E74D24ACEEC4004C0508 /* HTTPManager.swift */; };
 		5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75024ACEF4C004C0508 /* EndPoints.swift */; };
 		5F33E75424ACF172004C0508 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75324ACF172004C0508 /* EventTableViewCell.swift */; };
+		5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		5F33E74D24ACEEC4004C0508 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		5F33E75024ACEF4C004C0508 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		5F33E75324ACF172004C0508 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		5F33E74524ACD0F5004C0508 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5F33E75524AD15D4004C0508 /* Cells */,
 				5F33E74B24ACEE11004C0508 /* EventsListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -190,6 +193,14 @@
 			isa = PBXGroup;
 			children = (
 				5F33E75324ACF172004C0508 /* EventTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5F33E75524AD15D4004C0508 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -298,6 +309,7 @@
 				5F33E75424ACF172004C0508 /* EventTableViewCell.swift in Sources */,
 				5F33E72324ACCEC0004C0508 /* EventsListViewController.swift in Sources */,
 				5F33E74E24ACEEC4004C0508 /* HTTPManager.swift in Sources */,
+				5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */,
 				5F33E71F24ACCEC0004C0508 /* AppDelegate.swift in Sources */,
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,
