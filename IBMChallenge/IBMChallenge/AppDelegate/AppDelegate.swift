@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  IBMChallenge
 //
-//  Created by Foton on 01/07/20.
+//  Created by Ruyther on 01/07/20.
 //  Copyright © 2020 ruyther. All rights reserved.
 //
 
