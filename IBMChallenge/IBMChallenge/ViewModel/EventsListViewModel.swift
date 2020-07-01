@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import CoreLocation
 
 class EventsListViewModel {
+    
+    private var location = CLLocation()
+    private var geoCoder = CLGeocoder()
+    
+    var events = [EventModel]()
+    
     init(model: [EventModel]? = nil) {
         if let inputModel = model {
             events = inputModel
         }
     }
-    
-    var events = [EventModel]()
 }
 
 extension EventsListViewModel {
@@ -39,4 +44,24 @@ extension EventsListViewModel {
         })
     }
 
+    func getLocationName(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String, Error?) -> Void) {
+        
+        let location = getLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if error == nil {
+                placemarks?.forEach({ (placemark) in
+                    if let city = placemark.locality {
+                        completion(city, nil)
+                    }
+                })
+            }
+            completion("", error)
+        }
+    }
+    
+    private func getLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> CLLocation {
+        location = CLLocation(latitude: latitude, longitude: longitude)
+        return location
+    }
 }

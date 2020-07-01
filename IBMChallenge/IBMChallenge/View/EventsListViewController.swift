@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class EventsListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var data = [EventModel]()
-    var eventsListViewModel = EventsListViewModel()
+    private var data = [EventModel]()
+    private var eventsListViewModel = EventsListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,10 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLbl.text = cellData.title
         cell.descriptionLbl.text = cellData.description
-        cell.getImageFromURL(url: NSURL(string: cellData.image ?? "")! as URL)
+        
+        if let url = URL(string: cellData.image ?? "") {
+            cell.getImageFromURL(url: url)
+        }
         
         return cell
     }

@@ -35,22 +35,22 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="138" id="N4f-FO-ZdZ" customClass="EventTableViewCell" customModule="IBMChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="138"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="180" id="N4f-FO-ZdZ" customClass="EventTableViewCell" customModule="IBMChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4f-FO-ZdZ" id="R5D-wJ-M0U">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_image" translatesAutoresizingMaskIntoConstraints="NO" id="gO9-Ep-tk4">
-                                                    <rect key="frame" x="20" y="26" width="120" height="86"/>
+                                                    <rect key="frame" x="20" y="26" width="120" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="Sbz-gj-4I7"/>
                                                         <constraint firstAttribute="height" constant="100" id="cRk-CD-ABH"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-b3-Icb">
-                                                    <rect key="frame" x="148" y="26" width="246" height="86"/>
+                                                    <rect key="frame" x="148" y="26" width="246" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umk-Dq-HUT">
                                                             <rect key="frame" x="0.0" y="0.0" width="246" height="30"/>
@@ -62,7 +62,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW7-ew-CTE">
-                                                            <rect key="frame" x="0.0" y="30" width="246" height="56"/>
+                                                            <rect key="frame" x="0.0" y="30" width="246" height="70"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -77,14 +77,23 @@
                                                         <constraint firstItem="umk-Dq-HUT" firstAttribute="top" secondItem="dhO-b3-Icb" secondAttribute="top" id="sfA-dl-Yb0"/>
                                                     </constraints>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2e-pv-pjp">
+                                                    <rect key="frame" x="20" y="134" width="120" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dhO-b3-Icb" firstAttribute="top" secondItem="gO9-Ep-tk4" secondAttribute="top" id="1ki-VX-B5D"/>
+                                                <constraint firstItem="j2e-pv-pjp" firstAttribute="top" secondItem="gO9-Ep-tk4" secondAttribute="bottom" constant="8" id="4EV-Nq-qko"/>
                                                 <constraint firstItem="gO9-Ep-tk4" firstAttribute="bottom" secondItem="dhO-b3-Icb" secondAttribute="bottom" id="5zg-IC-9Ug"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dhO-b3-Icb" secondAttribute="trailing" id="9HW-mv-Kdu"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gO9-Ep-tk4" secondAttribute="bottom" constant="15" id="Lqg-0m-xpC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="j2e-pv-pjp" secondAttribute="bottom" constant="8" id="JNE-Fj-iwa"/>
                                                 <constraint firstItem="gO9-Ep-tk4" firstAttribute="top" secondItem="R5D-wJ-M0U" secondAttribute="topMargin" constant="15" id="Mc4-DU-ndM"/>
+                                                <constraint firstItem="j2e-pv-pjp" firstAttribute="leading" secondItem="gO9-Ep-tk4" secondAttribute="leading" id="PgX-Fz-9gm"/>
                                                 <constraint firstItem="gO9-Ep-tk4" firstAttribute="leading" secondItem="R5D-wJ-M0U" secondAttribute="leadingMargin" id="Z8f-Fb-1RW"/>
+                                                <constraint firstItem="gO9-Ep-tk4" firstAttribute="trailing" secondItem="j2e-pv-pjp" secondAttribute="trailing" id="dNk-Lw-qEg"/>
                                                 <constraint firstItem="dhO-b3-Icb" firstAttribute="leading" secondItem="gO9-Ep-tk4" secondAttribute="trailing" constant="8" id="exN-ba-mBY"/>
                                             </constraints>
                                         </tableViewCellContentView>

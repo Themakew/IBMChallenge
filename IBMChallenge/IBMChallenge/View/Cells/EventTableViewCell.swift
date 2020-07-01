@@ -18,6 +18,7 @@ class EventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        eventImageView.image = UIImage(named: "empty_image")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,11 +27,18 @@ class EventTableViewCell: UITableViewCell {
     
     func getImageFromURL(url: URL) {
         eventTableViewCellViewModel.getData(from: url) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            
-            DispatchQueue.main.async() {
-                self.eventImageView.image = UIImage(data: data)
+            guard let data = data, error == nil else {
+                self.setImage(image: UIImage(named: "empty_image"))
+                return
             }
+            
+            self.setImage(image: UIImage(data: data))
+        }
+    }
+    
+    private func setImage(image: UIImage?) {
+        DispatchQueue.main.async() {
+            self.eventImageView.image = image
         }
     }
 }
