@@ -29,7 +29,6 @@ class EventTableViewCell: UITableViewCell {
         super.awakeFromNib()
         eventImageView.image = UIImage(named: "empty_image")
         locationLbl.text = ""
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

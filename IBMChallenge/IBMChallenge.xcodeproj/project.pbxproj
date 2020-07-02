@@ -26,6 +26,8 @@
 		5F43640624AE3B4A00061DA8 /* EventResponsableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */; };
 		5F43640724AE3B4A00061DA8 /* EventResponsableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F43640524AE3B4A00061DA8 /* EventResponsableTableViewCell.xib */; };
 		5F43640924AE3E2000061DA8 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */; };
+		5F43640C24AE4E7700061DA8 /* MapLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F43640A24AE4E7700061DA8 /* MapLocationTableViewCell.swift */; };
+		5F43640D24AE4E7700061DA8 /* MapLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F43640B24AE4E7700061DA8 /* MapLocationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResponsableTableViewCell.swift; sourceTree = "<group>"; };
 		5F43640524AE3B4A00061DA8 /* EventResponsableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventResponsableTableViewCell.xib; sourceTree = "<group>"; };
 		5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		5F43640A24AE4E7700061DA8 /* MapLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationTableViewCell.swift; sourceTree = "<group>"; };
+		5F43640B24AE4E7700061DA8 /* MapLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapLocationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 		5F33E74624ACD100004C0508 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				5F43640B24AE4E7700061DA8 /* MapLocationTableViewCell.xib */,
 				5F43640524AE3B4A00061DA8 /* EventResponsableTableViewCell.xib */,
 				5F33E72424ACCEC0004C0508 /* Main.storyboard */,
 				5F33E72924ACCEC3004C0508 /* LaunchScreen.storyboard */,
@@ -211,6 +216,7 @@
 			children = (
 				5F33E75324ACF172004C0508 /* EventTableViewCell.swift */,
 				5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */,
+				5F43640A24AE4E7700061DA8 /* MapLocationTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 			files = (
 				5F33E72B24ACCEC3004C0508 /* LaunchScreen.storyboard in Resources */,
 				5F33E72824ACCEC3004C0508 /* Assets.xcassets in Resources */,
+				5F43640D24AE4E7700061DA8 /* MapLocationTableViewCell.xib in Resources */,
 				5F33E72624ACCEC0004C0508 /* Main.storyboard in Resources */,
 				5F43640724AE3B4A00061DA8 /* EventResponsableTableViewCell.xib in Resources */,
 			);
@@ -353,6 +360,7 @@
 				5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */,
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,
+				5F43640C24AE4E7700061DA8 /* MapLocationTableViewCell.swift in Sources */,
 				5F33E72124ACCEC0004C0508 /* SceneDelegate.swift in Sources */,
 				5F33E74C24ACEE11004C0508 /* EventsListViewModel.swift in Sources */,
 			);

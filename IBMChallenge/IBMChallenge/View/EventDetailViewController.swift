@@ -40,6 +40,7 @@ class EventDetailViewController: UIViewController {
         tableView.separatorStyle = .none
         
         tableView.register(UINib(nibName: "EventResponsableTableViewCell", bundle: nil), forCellReuseIdentifier: "userCell")
+        tableView.register(UINib(nibName: "MapLocationTableViewCell", bundle: nil), forCellReuseIdentifier: "mapCell")
         
         eventDetailViewModel.getEventDetail(id: id) { [weak self] event in
             do {
@@ -60,20 +61,56 @@ class EventDetailViewController: UIViewController {
     }
 }
 
+
+// MARK: - Extension -
+
+extension EventDetailViewController {
+    @IBAction
+    func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 // MARK: - UITableViewDelegate, UITableViewDataSource -
 
 extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! EventResponsableTableViewCell
+        let cell = UITableViewCell()
+        
         let cellData = eventDetailViewModel.event
         
-        cell.userImage.image = UIImage(named: cellData.people?[0].picture ?? "user")
-        cell.userName.text = cellData.people?[0].name ?? "-"
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! MapLocationTableViewCell
+            
+            cell.setLocation(latitude: cellData.latitude ?? 0.0, longitude: cellData.longitude ?? 0.0)
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! EventResponsableTableViewCell
+            
+            cell.userImage.image = UIImage(named: cellData.people?[0].picture ?? "user")
+            cell.userName.text = cellData.people?[0].name ?? "-"
+            cell.isUserInteractionEnabled = false
+            
+            return cell
+        default:
+            break
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
