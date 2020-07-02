@@ -20,6 +20,8 @@ class EventDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private var eventList: [CellLineModel] = []
+    
     // MARK: - Init -
     
     init?(coder: NSCoder, id: String) {
@@ -41,11 +43,13 @@ class EventDetailViewController: UIViewController {
         
         tableView.register(UINib(nibName: "EventResponsableTableViewCell", bundle: nil), forCellReuseIdentifier: "userCell")
         tableView.register(UINib(nibName: "MapLocationTableViewCell", bundle: nil), forCellReuseIdentifier: "mapCell")
+        tableView.register(UINib(nibName: "GenericTwoColumnTableViewCell", bundle: nil), forCellReuseIdentifier: "genericCell")
         
         eventDetailViewModel.getEventDetail(id: id) { [weak self] event in
             do {
                 _ = try event.get()
                 DispatchQueue.main.async {
+                    self?.getEventList()
                     self?.updateUI()
                 }
             } catch let error {
@@ -58,6 +62,12 @@ class EventDetailViewController: UIViewController {
     
     func updateUI() {
         tableView.reloadData()
+    }
+    
+    // MARK: - Private Methods -
+    
+    private func getEventList() {
+        eventList = eventDetailViewModel.buildEventList(eventList: eventList)
     }
 }
 
@@ -76,34 +86,51 @@ extension EventDetailViewController {
 extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        eventList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+
+        let cellData = eventList[indexPath.row]
         
-        let cellData = eventDetailViewModel.event
-        
-        switch indexPath.row {
-        case 0:
+        if let mapCell = cellData as? MapLine {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! MapLocationTableViewCell
-            
-            cell.setLocation(latitude: cellData.latitude ?? 0.0, longitude: cellData.longitude ?? 0.0)
-            
+
+            cell.setLocation(
+                latitude: mapCell.latitude,
+                longitude: mapCell.longitude
+            )
+
             return cell
-        case 1:
+        } else if let userCell = cellData as? InfoLine {
             let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! EventResponsableTableViewCell
             
-            cell.userImage.image = UIImage(named: cellData.people?[0].picture ?? "user")
-            cell.userName.text = cellData.people?[0].name ?? "-"
+            cell.bind(
+                titleLbl: userCell.title,
+                imageName: userCell.imageName,
+                userName: userCell.description
+            )
+            
             cell.isUserInteractionEnabled = false
             
             return cell
-        default:
-            break
+        } else {
+            if let genericCell = cellData as? TwoColumnInfoLine {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "genericCell", for: indexPath) as! GenericTwoColumnTableViewCell
+                
+                cell.bind(
+                    titleText: genericCell.title,
+                    descriptionText: genericCell.description
+                )
+                
+                cell.isUserInteractionEnabled = false
+                
+                return cell
+            } else {
+                let cell = UITableViewCell()
+                return cell
+            }
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

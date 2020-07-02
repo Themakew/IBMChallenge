@@ -53,7 +53,7 @@ struct EventModel: Codable {
     struct Voucher: Codable {
         var id: String?
         var eventId: String?
-        var discount: Int?
+        var discount: Double?
     }
     
     private func formatDate(_ date: Double) -> String {

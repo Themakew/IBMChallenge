@@ -24,7 +24,7 @@ class MapLocationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        mapView.layer.cornerRadius = 4
+        mapView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
