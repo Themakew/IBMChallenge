@@ -7,8 +7,19 @@
 //
 
 import Foundation
+import CoreLocation
+
+// MARK: -
 
 class EventTableViewCellViewModel {
+    
+    // MARK: - Properties -
+    
+    private var location = CLLocation()
+    private var geoCoder = CLGeocoder()
+    
+    // MARK: - Internal Methods -
+    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse {
@@ -21,7 +32,31 @@ class EventTableViewCellViewModel {
                 } else {
                     completion(data, response, NSError(domain: "", code: httpResponse.statusCode, userInfo: nil))
                 }
-            }  
+            }
         }.resume()
+    }
+    
+    func getLocationName(latitude: Double, longitude: Double, completion: @escaping (String, Error?) -> Void) {
+        
+        let location = getLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if error == nil {
+                placemarks?.forEach({ (placemark) in
+                    if let city = placemark.locality {
+                        completion(city, nil)
+                    }
+                })
+            } else {
+                completion("", error)
+            }
+        }
+    }
+    
+    // MARK: - Private Methods -
+    
+    private func getLocation(latitude: Double, longitude: Double) -> CLLocation {
+        location = CLLocation(latitude: latitude, longitude: longitude)
+        return location
     }
 }

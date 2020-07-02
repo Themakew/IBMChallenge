@@ -7,23 +7,25 @@
 //
 
 import Foundation
-import CoreLocation
+
+// MARK: -
 
 class EventsListViewModel {
     
-    private var location = CLLocation()
-    private var geoCoder = CLGeocoder()
+    // MARK: - Properties -
     
     var events = [EventModel]()
+    
+    // MARK: - Init -
     
     init(model: [EventModel]? = nil) {
         if let inputModel = model {
             events = inputModel
         }
     }
-}
 
-extension EventsListViewModel {
+    // MARK: - Internal Methods -
+    
     func getEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
         HTTPManager.shared.get(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
             guard let self = self else { return }
@@ -42,26 +44,5 @@ extension EventsListViewModel {
                 }
             }
         })
-    }
-
-    func getLocationName(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String, Error?) -> Void) {
-        
-        let location = getLocation(latitude: latitude, longitude: longitude)
-        
-        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            if error == nil {
-                placemarks?.forEach({ (placemark) in
-                    if let city = placemark.locality {
-                        completion(city, nil)
-                    }
-                })
-            }
-            completion("", error)
-        }
-    }
-    
-    private func getLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> CLLocation {
-        location = CLLocation(latitude: latitude, longitude: longitude)
-        return location
     }
 }

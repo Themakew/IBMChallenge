@@ -7,15 +7,20 @@
 //
 
 import UIKit
-import CoreLocation
+
+// MARK: -
 
 class EventsListViewController: UIViewController {
+    
+    // MARK: - Properties -
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     private var data = [EventModel]()
     private var eventsListViewModel = EventsListViewModel()
+    
+    // MARK: - View Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +38,13 @@ class EventsListViewController: UIViewController {
                     self?.tableView.backgroundView = nil
                     self?.updateUI()
                 }
-            } catch {
+            } catch let error {
                 print(error.localizedDescription)
             }
         }
     }
+    
+    // MARK: - Internal Methods -
     
     func showActivity() {
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -52,6 +59,8 @@ class EventsListViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource -
+
 extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsListViewModel.events.count
@@ -62,7 +71,10 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
         let cellData = eventsListViewModel.events[indexPath.row]
         
         cell.titleLbl.text = cellData.title
-        cell.descriptionLbl.text = cellData.description
+        cell.descriptionLbl.text = cellData.formattedDescription
+        cell.getLocation(latitude: cellData.latitude ?? 0.0, longitude: cellData.longitude ?? 0.0)
+        cell.dateLbl.text = cellData.formattedDate
+        cell.priceLbl.text = cellData.formattedPrice
         
         if let url = URL(string: cellData.image ?? "") {
             cell.getImageFromURL(url: url)

@@ -20,6 +20,8 @@
 		5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75024ACEF4C004C0508 /* EndPoints.swift */; };
 		5F33E75424ACF172004C0508 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75324ACF172004C0508 /* EventTableViewCell.swift */; };
 		5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */; };
+		5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75A24AD6A76004C0508 /* Utils.swift */; };
+		5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		5F33E75024ACEF4C004C0508 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		5F33E75324ACF172004C0508 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		5F33E75A24AD6A76004C0508 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +96,12 @@
 			isa = PBXGroup;
 			children = (
 				5F33E74824ACD167004C0508 /* AppDelegate */,
-				5F33E74524ACD0F5004C0508 /* ViewModel */,
-				5F33E74424ACD0EA004C0508 /* Model */,
 				5F33E74224ACD0CB004C0508 /* Services */,
 				5F33E74124ACD0BE004C0508 /* Resources */,
+				5F33E75824AD6A14004C0508 /* Extensions */,
+				5F33E75924AD6A61004C0508 /* Utils */,
+				5F33E74424ACD0EA004C0508 /* Model */,
+				5F33E74524ACD0F5004C0508 /* ViewModel */,
 				5F33E74024ACD0AA004C0508 /* View */,
 			);
 			path = IBMChallenge;
@@ -113,8 +119,8 @@
 		5F33E74024ACD0AA004C0508 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5F33E75224ACF15B004C0508 /* Cells */,
 				5F33E72224ACCEC0004C0508 /* EventsListViewController.swift */,
+				5F33E75224ACF15B004C0508 /* Cells */,
 				5F33E74624ACD100004C0508 /* Layout */,
 			);
 			path = View;
@@ -203,6 +209,22 @@
 				5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5F33E75824AD6A14004C0508 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5F33E75924AD6A61004C0508 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E75A24AD6A76004C0508 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +333,8 @@
 				5F33E74E24ACEEC4004C0508 /* HTTPManager.swift in Sources */,
 				5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */,
 				5F33E71F24ACCEC0004C0508 /* AppDelegate.swift in Sources */,
+				5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */,
+				5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */,
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,
 				5F33E72124ACCEC0004C0508 /* SceneDelegate.swift in Sources */,

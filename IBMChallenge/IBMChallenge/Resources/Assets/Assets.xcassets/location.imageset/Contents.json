@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "png-transparent-location-icon-geolocation-symbol-computer-icons-encapsulated-postscript-symbol-miscellaneous-cdr-black.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "image.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

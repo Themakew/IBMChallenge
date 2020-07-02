@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import CoreLocation
+
+// MARK: -
 
 struct EventModel: Codable {
     
+    // MARK: - Properties -
+    
     var people: [People]?
-    var date: UInt64?
+    var date: Double?
     var description: String?
     var image: String?
     var longitude: Double?
@@ -20,6 +25,10 @@ struct EventModel: Codable {
     var title: String?
     var id: String?
     var voucher: [Voucher]?
+    
+    var formattedDate: String? { return formatDate(date ?? 0.0) }
+    var formattedPrice: String? { return formatPrice(price ?? 0.0) }
+    var formattedDescription: String? { return formatDescription(description ?? "") }
     
     private enum CodingKeys: String, CodingKey {
         case people
@@ -45,5 +54,18 @@ struct EventModel: Codable {
         var id: String?
         var eventId: String?
         var discount: Int?
+    }
+    
+    private func formatDate(_ date: Double) -> String {
+        let date = Date(timeIntervalSince1970: date)
+        return Utils.formatDate(date: date)
+    }
+    
+    private func formatPrice(_ price: Double) -> String {
+        return price.monetaryValueWithCurrency ?? "-"
+    }
+    
+    private func formatDescription(_ description: String) -> String {
+        return description.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines).filter{!$0.isEmpty}.joined(separator: "\n")
     }
 }
