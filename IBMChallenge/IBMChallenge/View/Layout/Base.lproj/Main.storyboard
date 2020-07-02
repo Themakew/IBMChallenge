@@ -193,21 +193,36 @@
             </objects>
             <point key="canvasLocation" x="1116" y="139"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Detalhe-->
         <scene sceneID="34f-ns-Jxn">
             <objects>
                 <viewController id="1jL-RJ-5aj" customClass="EventDetailViewController" customModule="IBMChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRh-5L-EG3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-yQ-9Ld">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fHe-yQ-9Ld" firstAttribute="top" secondItem="vcI-IG-TTO" secondAttribute="top" id="1w5-JT-Aep"/>
+                            <constraint firstItem="fHe-yQ-9Ld" firstAttribute="leading" secondItem="vcI-IG-TTO" secondAttribute="leading" id="6nq-sc-QbM"/>
+                            <constraint firstItem="fHe-yQ-9Ld" firstAttribute="trailing" secondItem="vcI-IG-TTO" secondAttribute="trailing" id="R9I-mi-aeu"/>
+                            <constraint firstAttribute="bottom" secondItem="fHe-yQ-9Ld" secondAttribute="bottom" id="uDY-kT-RkQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vcI-IG-TTO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0pa-iF-BAQ"/>
+                    <navigationItem key="navigationItem" title="Detalhe" id="0pa-iF-BAQ"/>
+                    <connections>
+                        <outlet property="tableView" destination="fHe-yQ-9Ld" id="AM9-lI-Oe0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxE-BB-UY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984" y="139"/>
+            <point key="canvasLocation" x="1982.608695652174" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>

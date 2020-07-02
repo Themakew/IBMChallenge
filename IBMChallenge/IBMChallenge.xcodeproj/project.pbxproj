@@ -23,6 +23,9 @@
 		5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75A24AD6A76004C0508 /* Utils.swift */; };
 		5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */; };
 		5F33E75F24AD7D4D004C0508 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */; };
+		5F43640624AE3B4A00061DA8 /* EventResponsableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */; };
+		5F43640724AE3B4A00061DA8 /* EventResponsableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F43640524AE3B4A00061DA8 /* EventResponsableTableViewCell.xib */; };
+		5F43640924AE3E2000061DA8 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		5F33E75A24AD6A76004C0508 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResponsableTableViewCell.swift; sourceTree = "<group>"; };
+		5F43640524AE3B4A00061DA8 /* EventResponsableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventResponsableTableViewCell.xib; sourceTree = "<group>"; };
+		5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 			children = (
 				5F33E75524AD15D4004C0508 /* Cells */,
 				5F33E74B24ACEE11004C0508 /* EventsListViewModel.swift */,
+				5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 		5F33E74624ACD100004C0508 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				5F43640524AE3B4A00061DA8 /* EventResponsableTableViewCell.xib */,
 				5F33E72424ACCEC0004C0508 /* Main.storyboard */,
 				5F33E72924ACCEC3004C0508 /* LaunchScreen.storyboard */,
 			);
@@ -202,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				5F33E75324ACF172004C0508 /* EventTableViewCell.swift */,
+				5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -314,6 +323,7 @@
 				5F33E72B24ACCEC3004C0508 /* LaunchScreen.storyboard in Resources */,
 				5F33E72824ACCEC3004C0508 /* Assets.xcassets in Resources */,
 				5F33E72624ACCEC0004C0508 /* Main.storyboard in Resources */,
+				5F43640724AE3B4A00061DA8 /* EventResponsableTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,9 +345,11 @@
 				5F33E72324ACCEC0004C0508 /* EventsListViewController.swift in Sources */,
 				5F33E74E24ACEEC4004C0508 /* HTTPManager.swift in Sources */,
 				5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */,
+				5F43640924AE3E2000061DA8 /* EventDetailViewModel.swift in Sources */,
 				5F33E71F24ACCEC0004C0508 /* AppDelegate.swift in Sources */,
 				5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */,
 				5F33E75F24AD7D4D004C0508 /* EventDetailViewController.swift in Sources */,
+				5F43640624AE3B4A00061DA8 /* EventResponsableTableViewCell.swift in Sources */,
 				5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */,
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,
