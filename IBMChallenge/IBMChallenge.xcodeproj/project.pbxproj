@@ -22,6 +22,7 @@
 		5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */; };
 		5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75A24AD6A76004C0508 /* Utils.swift */; };
 		5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */; };
+		5F33E75F24AD7D4D004C0508 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		5F33E75A24AD6A76004C0508 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				5F33E72224ACCEC0004C0508 /* EventsListViewController.swift */,
+				5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */,
 				5F33E75224ACF15B004C0508 /* Cells */,
 				5F33E74624ACD100004C0508 /* Layout */,
 			);
@@ -334,6 +337,7 @@
 				5F33E75724AD15F2004C0508 /* EventTableViewCellViewModel.swift in Sources */,
 				5F33E71F24ACCEC0004C0508 /* AppDelegate.swift in Sources */,
 				5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */,
+				5F33E75F24AD7D4D004C0508 /* EventDetailViewController.swift in Sources */,
 				5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */,
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,

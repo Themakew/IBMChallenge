@@ -57,6 +57,12 @@ class EventsListViewController: UIViewController {
     func updateUI() {
         tableView.reloadData()
     }
+    
+    @IBSegueAction
+    func sendEventData(_ coder: NSCoder) -> EventDetailViewController? {
+        guard let row = tableView.indexPathForSelectedRow?.row else { return nil }
+        return EventDetailViewController(coder: coder, id: String(row + 1))
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource -
@@ -84,6 +90,6 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "send", sender: self)
+        performSegue(withIdentifier: "sendData", sender: self)
     }
 }
