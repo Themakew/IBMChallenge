@@ -13,13 +13,12 @@ import UIKit
 class EventDetailViewController: UIViewController {
 
     // MARK: - Properties -
+
+    @IBOutlet weak var tableView: UITableView!
     
     var id: String
     
     private var eventDetailViewModel = EventDetailViewModel()
-
-    @IBOutlet weak var tableView: UITableView!
-    
     private var eventList: [CellLineModel] = []
     
     // MARK: - Init -
@@ -41,9 +40,9 @@ class EventDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         
-        tableView.register(UINib(nibName: "EventResponsableTableViewCell", bundle: nil), forCellReuseIdentifier: "userCell")
-        tableView.register(UINib(nibName: "MapLocationTableViewCell", bundle: nil), forCellReuseIdentifier: "mapCell")
-        tableView.register(UINib(nibName: "GenericTwoColumnTableViewCell", bundle: nil), forCellReuseIdentifier: "genericCell")
+        tableView.register(UINib(nibName: "EventResponsableTableViewCell", bundle: nil), forCellReuseIdentifier: EventResponsableTableViewCell.cellIdentifier)
+        tableView.register(UINib(nibName: "MapLocationTableViewCell", bundle: nil), forCellReuseIdentifier: MapLocationTableViewCell.cellIdentifier)
+        tableView.register(UINib(nibName: "GenericTwoColumnTableViewCell", bundle: nil), forCellReuseIdentifier: GenericTwoColumnTableViewCell.cellIdentifier)
         
         eventDetailViewModel.getEventDetail(id: id) { [weak self] event in
             do {
@@ -71,7 +70,6 @@ class EventDetailViewController: UIViewController {
     }
 }
 
-
 // MARK: - Extension -
 
 extension EventDetailViewController {
@@ -94,7 +92,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cellData = eventList[indexPath.row]
         
         if let mapCell = cellData as? MapLine {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! MapLocationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: MapLocationTableViewCell.cellIdentifier, for: indexPath) as! MapLocationTableViewCell
 
             cell.setLocation(
                 latitude: mapCell.latitude,
@@ -103,7 +101,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
             return cell
         } else if let userCell = cellData as? InfoLine {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! EventResponsableTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: EventResponsableTableViewCell.cellIdentifier, for: indexPath) as! EventResponsableTableViewCell
             
             cell.bind(
                 titleLbl: userCell.title,
@@ -116,7 +114,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         } else {
             if let genericCell = cellData as? TwoColumnInfoLine {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "genericCell", for: indexPath) as! GenericTwoColumnTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: GenericTwoColumnTableViewCell.cellIdentifier, for: indexPath) as! GenericTwoColumnTableViewCell
                 
                 cell.bind(
                     titleText: genericCell.title,

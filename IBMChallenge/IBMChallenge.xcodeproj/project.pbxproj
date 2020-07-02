@@ -31,6 +31,8 @@
 		5F43641024AE682F00061DA8 /* GenericTwoColumnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F43640E24AE682F00061DA8 /* GenericTwoColumnTableViewCell.swift */; };
 		5F43641124AE682F00061DA8 /* GenericTwoColumnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F43640F24AE682F00061DA8 /* GenericTwoColumnTableViewCell.xib */; };
 		5F6AFFD624AE715D0089B6C1 /* CellLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AFFD524AE715D0089B6C1 /* CellLineModel.swift */; };
+		5F6AFFD824AEA0EA0089B6C1 /* IBMChallenge.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F6AFFD724AEA0EA0089B6C1 /* IBMChallenge.strings */; };
+		5F6AFFDA24AEA2C60089B6C1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AFFD924AEA2C60089B6C1 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		5F43640E24AE682F00061DA8 /* GenericTwoColumnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTwoColumnTableViewCell.swift; sourceTree = "<group>"; };
 		5F43640F24AE682F00061DA8 /* GenericTwoColumnTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericTwoColumnTableViewCell.xib; sourceTree = "<group>"; };
 		5F6AFFD524AE715D0089B6C1 /* CellLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLineModel.swift; sourceTree = "<group>"; };
+		5F6AFFD724AEA0EA0089B6C1 /* IBMChallenge.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = IBMChallenge.strings; sourceTree = "<group>"; };
+		5F6AFFD924AEA2C60089B6C1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				5F33E72724ACCEC3004C0508 /* Assets.xcassets */,
+				5F6AFFD724AEA0EA0089B6C1 /* IBMChallenge.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */,
+				5F6AFFD924AEA2C60089B6C1 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				5F43640D24AE4E7700061DA8 /* MapLocationTableViewCell.xib in Resources */,
 				5F33E72624ACCEC0004C0508 /* Main.storyboard in Resources */,
 				5F43641124AE682F00061DA8 /* GenericTwoColumnTableViewCell.xib in Resources */,
+				5F6AFFD824AEA0EA0089B6C1 /* IBMChallenge.strings in Resources */,
 				5F43640724AE3B4A00061DA8 /* EventResponsableTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +375,7 @@
 				5F33E75D24AD6CFA004C0508 /* Double+Extension.swift in Sources */,
 				5F33E75F24AD7D4D004C0508 /* EventDetailViewController.swift in Sources */,
 				5F43640624AE3B4A00061DA8 /* EventResponsableTableViewCell.swift in Sources */,
+				5F6AFFDA24AEA2C60089B6C1 /* String+Extension.swift in Sources */,
 				5F33E75B24AD6A76004C0508 /* Utils.swift in Sources */,
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,

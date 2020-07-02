@@ -32,7 +32,7 @@ class EventsListViewModel {
             
             switch result {
             case .failure(let error):
-                print ("failure", error)
+                print ("failure".text(), error)
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {

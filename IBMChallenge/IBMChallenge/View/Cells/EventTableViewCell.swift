@@ -23,6 +23,8 @@ class EventTableViewCell: UITableViewCell {
     
     var eventTableViewCellViewModel = EventTableViewCellViewModel()
     
+    public static var cellIdentifier = "cell"
+    
     // MARK: - View Lifecycle -
     
     override func awakeFromNib() {

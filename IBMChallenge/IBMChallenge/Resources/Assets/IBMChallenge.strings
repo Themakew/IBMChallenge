@@ -1,0 +1,16 @@
+/* 
+  IBMChallenge.strings
+  IBMChallenge
+
+  Created by Ruyther on 02/07/20.
+  Copyright © 2020 ruyther. All rights reserved.
+*/
+
+"failure" = "failure";
+
+"responsable" = "Responsável";
+"event" = "Evento";
+"description" = "Descrição";
+"date" = "Data";
+"price" = "Preço";
+"vouchers" = "Cupons:";

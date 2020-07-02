@@ -32,7 +32,7 @@ class EventDetailViewModel {
             
             switch result {
             case .failure(let error):
-                print ("failure", error)
+                print ("failure".text(), error)
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {
@@ -48,12 +48,12 @@ class EventDetailViewModel {
     func buildEventList(eventList: [CellLineModel]) -> [CellLineModel] {
         var list = eventList
         list.append(MapLine(latitude: event.latitude ?? 0.0, longitude: event.longitude ?? 0.0))
-        list.append(InfoLine(title: "Responsável:", imageName: event.people?[0].picture ?? "user", description: event.people?[0].name ?? ""))
-        list.append(TwoColumnInfoLine(title: "Evento:", description: event.title ?? ""))
-        list.append(TwoColumnInfoLine(title: "Descrição:", description: event.description ?? ""))
-        list.append(TwoColumnInfoLine(title: "Data:", description: event.formattedDate ?? ""))
-        list.append(TwoColumnInfoLine(title: "Preço:", description: event.formattedPrice ?? ""))
-        list.append(TwoColumnInfoLine(title: "Cupons:", description: event.voucher?[0].discount?.monetaryValueWithCurrency ?? ""))
+        list.append(InfoLine(title: "responsable".text(comment: "", suffix: ":"), imageName: event.people?[0].picture ?? "user", description: event.people?[0].name ?? ""))
+        list.append(TwoColumnInfoLine(title: "event".text(comment: "", suffix: ":"), description: event.title ?? ""))
+        list.append(TwoColumnInfoLine(title: "description".text(comment: "", suffix: ":"), description: event.description ?? ""))
+        list.append(TwoColumnInfoLine(title: "date".text(comment: "", suffix: ":"), description: event.formattedDate ?? ""))
+        list.append(TwoColumnInfoLine(title: "price".text(comment: "", suffix: ":"), description: event.formattedPrice ?? ""))
+        list.append(TwoColumnInfoLine(title: "vouchers".text(comment: "", suffix: ":"), description: event.voucher?[0].discount?.monetaryValueWithCurrency ?? ""))
         
         return list
     }

@@ -18,6 +18,8 @@ class EventResponsableTableViewCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     
+    public static var cellIdentifier = "userCell"
+    
     // MARK: - View Lifecycle -
     
     override func awakeFromNib() {

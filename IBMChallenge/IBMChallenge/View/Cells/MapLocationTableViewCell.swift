@@ -19,6 +19,8 @@ class MapLocationTableViewCell: UITableViewCell {
     
     let annotation = MKPointAnnotation()
     
+    public static var cellIdentifier = "mapCell"
+    
     // MARK: - View Lifecycle -
     
     override func awakeFromNib() {
