@@ -98,12 +98,20 @@ class Utils {
         return UIImage(named: "empty_image")
     }
     
-    static func getFilePath(imageName: String) -> URL? {
+    private static func getFilePath(imageName: String) -> URL? {
         let fileManager = FileManager.default
         guard let documentURL = fileManager.urls(for: .documentDirectory,
                                                 in: FileManager.SearchPathDomainMask.userDomainMask).first else { return nil }
         let filename = imageName + ".png"
         
         return documentURL.appendingPathComponent(filename)
+    }
+    
+    static func shareInformation(viewController: UIViewController, title: String, description: String, image: UIImage) {
+        let shareAll = [title, description, image] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = viewController.view
+        
+        viewController.present(activityViewController, animated: true, completion: nil)
     }
 }

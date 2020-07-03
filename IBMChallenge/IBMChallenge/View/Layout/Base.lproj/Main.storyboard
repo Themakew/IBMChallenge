@@ -216,7 +216,7 @@
                         <viewLayoutGuide key="safeArea" id="vcI-IG-TTO"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detalhe" id="0pa-iF-BAQ">
-                        <barButtonItem key="leftBarButtonItem" title="Fechar" id="Okj-jh-lWe">
+                        <barButtonItem key="leftBarButtonItem" title="Fechar" image="xmark" catalog="system" id="Okj-jh-lWe">
                             <connections>
                                 <action selector="backButton:" destination="1jL-RJ-5aj" id="uvc-po-HmC"/>
                             </connections>
@@ -250,5 +250,6 @@
         <image name="person.crop.circle.fill.badge.checkmark" catalog="system" width="128" height="101"/>
         <image name="price" width="512" height="512"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>
