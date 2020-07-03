@@ -82,8 +82,8 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateLbl.text = cellData.formattedDate
         cell.priceLbl.text = cellData.formattedPrice
         
-        if let url = URL(string: cellData.image ?? "") {
-            cell.getImageFromURL(url: url)
+        if let url = URL(string: cellData.image ?? ""), let id = cellData.id {
+            cell.getImageFromURL(imageId: id, url: url)
         }
         
         return cell

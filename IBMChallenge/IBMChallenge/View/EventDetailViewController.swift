@@ -103,7 +103,13 @@ extension EventDetailViewController {
 
     @IBAction
     func shareAction(_ sender: Any) {
-       
+//        let text = "This is the text...."
+////        let image = UIImage(named: "Product")
+//        let myWebsite = NSURL(string:"https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile")
+//        let shareAll = [text, text, myWebsite ?? ""] as [Any]
+//        let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+//        activityViewController.popoverPresentationController?.sourceView = self.view
+//        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 

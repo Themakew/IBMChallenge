@@ -39,13 +39,14 @@ class EventTableViewCell: UITableViewCell {
     
     // MARK: - Internal Methods -
     
-    func getImageFromURL(url: URL) {
+    func getImageFromURL(imageId: String, url: URL) {
         eventTableViewCellViewModel.getData(from: url) { (data, response, error) in
             guard let data = data, error == nil else {
                 self.setImage(image: UIImage(named: "empty_image"))
                 return
             }
             
+            Utils.saveImageInDevice(image: UIImage(data: data) ?? UIImage(named: "empty_image")!, imageName: imageId, storageType: .fileSystem)
             self.setImage(image: UIImage(data: data))
         }
     }
@@ -74,4 +75,5 @@ class EventTableViewCell: UITableViewCell {
             self.locationLbl.setNeedsDisplay()
         }
     }
+
 }
