@@ -8,8 +8,13 @@
 
 import UIKit
 
+// MARK: -
+
 class Utils {
-    public static func formatDate(date: Date) -> String {
+    
+    // MARK: - Static Methods -
+    
+    static func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateFormatter.locale = Locale(identifier: "pt_BR")
@@ -17,7 +22,7 @@ class Utils {
         return formattedDate
     }
     
-    public static func alert(_ viewController: UIViewController, title: String? = nil, _ message: String, btnLabel: String? = nil, completion: (() -> ())? = nil, onOK: (() -> ())? = nil) {
+    static func alert(_ viewController: UIViewController, title: String? = nil, _ message: String, btnLabel: String? = nil, completion: (() -> ())? = nil, onOK: (() -> ())? = nil) {
             DispatchQueue.main.async {
                 let cancelButton = UIAlertAction(title: btnLabel ?? "ok".text(), style: .default, handler: { action in
                     onOK?()
@@ -29,4 +34,30 @@ class Utils {
                 viewController.present(alert, animated: true, completion: completion)
             }
         }
+    
+    static func setTextFieldAlert(viewController: UIViewController, completionHandler: @escaping(_ nameText: String?, _ emailText: String?) -> Void) {
+        
+        let alertController = UIAlertController(title: "check_in".text(), message: "check_in_description".text(), preferredStyle: UIAlertController.Style.alert)
+        alertController.addTextField {(textField: UITextField!) -> Void in
+            textField.placeholder = "name".text()
+        }
+        
+        let cancelAction = UIAlertAction(title: "cancel".text(), style: UIAlertAction.Style.default, handler: nil)
+        
+        alertController.addTextField {(textField: UITextField!) -> Void in
+            textField.placeholder = "email".text()
+        }
+        
+        let saveAction = UIAlertAction(title: "send".text(), style: UIAlertAction.Style.default, handler: { alert -> Void in
+            let firstTextField = alertController.textFields![0] as UITextField
+            let secondTextField = alertController.textFields![1] as UITextField
+            
+            completionHandler(firstTextField.text, secondTextField.text)
+        })
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+
+        viewController.present(alertController, animated: true, completion: nil)
+    }
 }

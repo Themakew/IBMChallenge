@@ -25,6 +25,7 @@
 "ok" = "OK";
 
 "alert_empty_fields" = "Por favor verifique os campos eles não podem estar vazios.";
+"alert_email_error" = "Digite um email válido.";
 "service_error" = "Sistema indisponível, tente novamente.";
 "service_url_error" = "Url inválida, tente novamente.";
 "service_success" = "Check-in realizado com sucesso!";
