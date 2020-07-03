@@ -27,7 +27,7 @@ class EventsListViewModel {
     // MARK: - Internal Methods -
     
     func getEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
-        HTTPManager.shared.get(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
+        HTTPManager.shared.executeRequest(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
             guard let self = self else { return }
             
             switch result {

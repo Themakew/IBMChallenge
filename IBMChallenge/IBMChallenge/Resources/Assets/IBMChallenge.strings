@@ -13,4 +13,18 @@
 "description" = "Descrição";
 "date" = "Data";
 "price" = "Preço";
-"vouchers" = "Cupons:";
+"vouchers" = "Cupons";
+
+"check_in" = "Check-In";
+"check_in_description" = "Preencha com os dados para fazer o check-in";
+
+"name" = "Informe o seu nome";
+"email" = "Informe o seu e-mail";
+"cancel" = "Cancelar";
+"send" = "Enviar";
+"ok" = "OK";
+
+"alert_empty_fields" = "Por favor verifique os campos eles não podem estar vazios.";
+"service_error" = "Sistema indisponível, tente novamente.";
+"service_url_error" = "Url inválida, tente novamente.";
+"service_success" = "Check-in realizado com sucesso!";

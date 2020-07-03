@@ -9,13 +9,17 @@
 import Foundation
 
 enum EndPoints {
+    
     case events
     case eventDetail(id: String)
+    case checkIn
     
     var path: String {
         switch self {
         case .events:
             return "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events"
+        case .checkIn:
+            return "http://5b840ba5db24a100142dcd8c.mockapi.io/api/checkin"
         case .eventDetail(let id):
             return String(format: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events/%@", id)
         }

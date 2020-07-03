@@ -77,6 +77,28 @@ extension EventDetailViewController {
     func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction
+    func checkInAction(_ sender: Any) {
+        setAlert { (nameText, emailText) in
+            if let name = nameText, let email = emailText {
+                self.eventDetailViewModel.sendUserDetail(request: UserDetail(eventId: self.eventDetailViewModel.event.id ?? "", name: name, email: email)) { (error) in
+                    if error == nil {
+                        Utils.alert(self, "service_success".text())
+                    } else {
+                        Utils.alert(self, error?.localizedDescription ?? "service_error".text())
+                    }
+                }
+            } else {
+                Utils.alert(self, "alert_empty_fields".text())
+            }
+        }
+    }
+       
+    @IBAction
+    func shareAction(_ sender: Any) {
+       
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource -
@@ -137,5 +159,30 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
+    }
+    
+    private func setAlert(completionHandler: @escaping(_ nameText: String?, _ emailText: String?) -> Void) {
+        let alertController = UIAlertController(title: "check_in".text(), message: "check_in_description".text(), preferredStyle: UIAlertController.Style.alert)
+        alertController.addTextField {(textField: UITextField!) -> Void in
+            textField.placeholder = "name".text()
+        }
+        
+        let cancelAction = UIAlertAction(title: "cancel".text(), style: UIAlertAction.Style.default, handler: nil)
+        
+        alertController.addTextField {(textField: UITextField!) -> Void in
+            textField.placeholder = "email".text()
+        }
+        
+        let saveAction = UIAlertAction(title: "send".text(), style: UIAlertAction.Style.default, handler: { alert -> Void in
+            let firstTextField = alertController.textFields![0] as UITextField
+            let secondTextField = alertController.textFields![1] as UITextField
+            
+            completionHandler(firstTextField.text, secondTextField.text)
+        })
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }

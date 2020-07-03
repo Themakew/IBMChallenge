@@ -6,7 +6,7 @@
 //  Copyright © 2020 ruyther. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Utils {
     public static func formatDate(date: Date) -> String {
@@ -16,4 +16,17 @@ class Utils {
         let formattedDate = dateFormatter.string(from: date)
         return formattedDate
     }
+    
+    public static func alert(_ viewController: UIViewController, title: String? = nil, _ message: String, btnLabel: String? = nil, completion: (() -> ())? = nil, onOK: (() -> ())? = nil) {
+            DispatchQueue.main.async {
+                let cancelButton = UIAlertAction(title: btnLabel ?? "ok".text(), style: .default, handler: { action in
+                    onOK?()
+                })
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alert.addAction(cancelButton)
+
+                viewController.present(alert, animated: true, completion: completion)
+            }
+        }
 }

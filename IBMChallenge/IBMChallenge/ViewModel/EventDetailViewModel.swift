@@ -26,13 +26,13 @@ class EventDetailViewModel {
     
     // MARK: - Internal Methods -
     
-    func getEventDetail(id: String, completion: @escaping (Result<EventModel, Error>) -> Void) {
-        HTTPManager.shared.get(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
+    func getEventDetail(id: String, completion: @escaping(Result<EventModel, Error>) -> Void) {
+        HTTPManager.shared.executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .failure(let error):
-                print ("failure".text(), error)
+                completion(.failure(error))
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {
@@ -40,6 +40,25 @@ class EventDetailViewModel {
                     completion(.success(try decoder.decode(EventModel.self, from: data)))
                 } catch {
                     completion(.failure(error))
+                }
+            }
+        })
+    }
+    
+    func sendUserDetail(request: UserDetail, completion: @escaping(Error?) -> Void) {
+        HTTPManager.shared.executeRequest(urlString: EndPoints.checkIn.path, completionBlock: { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .failure(let error):
+                completion(error)
+            case .success(let data):
+                let decoder = JSONDecoder()
+                do {
+                    self.event = try decoder.decode(EventModel.self, from: data)
+                    completion(nil)
+                } catch {
+                    completion(error)
                 }
             }
         })

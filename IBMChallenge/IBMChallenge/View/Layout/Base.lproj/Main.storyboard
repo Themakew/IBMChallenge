@@ -221,7 +221,18 @@
                                 <action selector="backButton:" destination="1jL-RJ-5aj" id="uvc-po-HmC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" id="5kG-oS-7mM"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="5kG-oS-7mM">
+                                <connections>
+                                    <action selector="shareAction:" destination="1jL-RJ-5aj" id="3YE-X4-D8o"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="person.crop.circle.fill.badge.checkmark" catalog="system" id="vid-vL-6Mp">
+                                <connections>
+                                    <action selector="checkInAction:" destination="1jL-RJ-5aj" id="1mM-Z5-MQd"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fHe-yQ-9Ld" id="AM9-lI-Oe0"/>
@@ -236,6 +247,7 @@
         <image name="date" width="916" height="982"/>
         <image name="empty_image" width="512" height="512"/>
         <image name="location" width="920" height="980"/>
+        <image name="person.crop.circle.fill.badge.checkmark" catalog="system" width="128" height="101"/>
         <image name="price" width="512" height="512"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
