@@ -1,0 +1,77 @@
+[
+   {
+      "people":[
+         {
+            "id":"1",
+            "eventId":"1",
+            "name":"name 1",
+            "picture":"picture 1"
+         }
+      ],
+      "date":1534784400000,
+      "description":"O Patas Dadas estarÃ¡ na RedenÃ§Ã£o, nesse domingo, com cÃ£es para adoÃ§Ã£o e produtos Ã  venda!\n\nNa ocasiÃ£o, teremos bottons, bloquinhos e camisetas!\n\nTraga seu Pet, os amigos e o chima, e venha aproveitar esse dia de sol com a gente e com alguns de nossos peludinhos - que estarÃ£o prontinhos para ganhar o â™¥ de um humano bem legal pra chamar de seu. \n\nAceitaremos todos os tipos de doaÃ§Ã£o:\n- guias e coleiras em bom estado\n- raÃ§Ã£o (as que mais precisamos no momento sÃ£o sÃªnior e filhote)\n- roupinhas \n- cobertas \n- remÃ©dios dentro do prazo de validade",
+      "image":"http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png",
+      "longitude":-51.2146267,
+      "latitude":-30.0392981,
+      "price":29.99,
+      "title":"Feira de adoÃ§Ã£o de animais na RedenÃ§Ã£o",
+      "id":"1",
+      "cupons":[
+         {
+            "id":"1",
+            "eventId":"1",
+            "discount":62
+         }
+      ]
+   },
+   {
+      "people":[
+         {
+            "id":"2",
+            "eventId":"2",
+            "name":"name 2",
+            "picture":"picture 2"
+         }
+      ],
+      "date":1534784400000,
+      "description":"Vamos ajudar !!\n\nSe vocÃª tem na sua casa roupas que estÃ£o em bom estado de uso e nÃ£o sabemos que fazer, coloque aqui na nossa pÃ¡gina sua cidade e sua doaÃ§Ã£o, concerteza poderÃ¡ ajudar outras pessoas que estÃ£o passando por problemas econÃ´micos no momento!!\n\nAjudar nÃ£o faz mal a ninguÃ©m!!!\n",
+      "image":"http://fm103.com.br/wp-content/uploads/2017/07/campanha-do-agasalho-balneario-camboriu-2016.jpg",
+      "longitude":-51.2148497,
+      "latitude":-30.037878,
+      "price":59.99,
+      "title":"DoaÃ§Ã£o de roupas",
+      "id":"2",
+      "cupons":[
+         {
+            "id":"2",
+            "eventId":"2",
+            "discount":30
+         }
+      ]
+   },
+   {
+      "people":[
+         {
+            "id":"3",
+            "eventId":"3",
+            "name":"name 3",
+            "picture":"picture 3"
+         }
+      ],
+      "date":1534784400000,
+      "description":"AtenÃ§Ã£o! Para nosso brique ser o mais organizado possÃ­vel, leia as regras e cumpra-as:\n* Ao publicar seus livros, evite criar Ã¡lbuns (nÃ£o hÃ¡ necessidade de remetÃª-los a nenhum Ã¡lbum);\n* A publicaÃ§Ã£o deverÃ¡ conter o valor desejado;\n* Ã‰ preferÃ­vel publicar uma foto do livro em questÃ£o a fim de mostrar o estado em que se encontra;\n* Respeite a ordem da fila;\n* HorÃ¡rio e local de encontro devem ser combinados inbox;\n* Caso nÃ£o possa comparecer, avise seu comprador/vendedor previamente;\n* Caso seu comprador desista, comente o post com \"disponÃ­vel\";\n* NÃ£o se esqueÃ§a de apagar a publicaÃ§Ã£o se o livro jÃ¡ foi vendido, ou ao menos comente \"vendido\" para que as administradoras possam apagÃ¡-la;\n* Evite discussÃµes e respeite o prÃ³ximo;\n",
+      "image":"http://www.fernaogaivota.com.br/documents/10179/1665610/feira-troca-de-livros.jpg",
+      "longitude":-51.2148497,
+      "latitude":-30.037878,
+      "price":19.99,
+      "title":"Feira de Troca de Livros",
+      "id":"3",
+      "cupons":[
+         {
+            "id":"3",
+            "eventId":"3",
+            "discount":17
+         }
+      ]
+   }
+]

@@ -27,12 +27,13 @@ class EventsListViewModel {
     // MARK: - Internal Methods -
     
     func getEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
-        HTTPManager.shared.executeRequest(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
+        HTTPManager(session: URLSession.shared).executeRequest(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
+            
             guard let self = self else { return }
             
             switch result {
             case .failure(let error):
-                print ("failure".text(), error)
+                print("failure".text(), error)
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {

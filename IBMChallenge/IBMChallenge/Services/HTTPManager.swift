@@ -33,17 +33,36 @@ extension HTTPError: LocalizedError {
     }
 }
 
+// MARK: - Protocol -
+
+protocol URLSessionProtocol {
+    typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
+}
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
 // MARK: -
 
 class HTTPManager {
     
     // MARK: - Properties -
     
-    static let shared: HTTPManager = HTTPManager()
+    private let session: URLSessionProtocol
+    
+    // MARK: - Init -
+    
+    init(session: URLSessionProtocol) {
+        self.session = session
+    }
     
     // MARK: - Internal Methods -
     
     func executeRequest(request: [String: String] = [:], type: HTTPMethod = .GET, urlString: String, completionBlock: @escaping (Result<Data, Error>) -> Void) {
+        
         guard let url = URL(string: urlString) else {
             completionBlock(.failure(HTTPError.invalidURL))
             return
@@ -51,7 +70,7 @@ class HTTPManager {
         
         let requestDictionary = createRequest(request: request, type: type, url: url)
         
-        let task = URLSession.shared.dataTask(with: requestDictionary) { data, response, error in
+        let task = session.dataTask(with: requestDictionary) { data, response, error in
             guard error == nil else {
                 completionBlock(.failure(error!))
                 return
@@ -64,10 +83,15 @@ class HTTPManager {
                     return
             }
 
+            if let jsonString = String(data: data ?? Data(), encoding: .utf8) {
+               print(jsonString)
+            }
             completionBlock(.success(responseData))
         }
         task.resume()
     }
+    
+    // MARK: - Private Methods -
     
     private func createRequest(request: [String: String], type: HTTPMethod, url: URL) -> URLRequest {
         var urlRequest = URLRequest(url: url)

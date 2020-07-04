@@ -27,7 +27,7 @@ class EventDetailViewModel {
     // MARK: - Internal Methods -
     
     func getEventDetail(id: String, completion: @escaping(Result<EventModel, Error>) -> Void) {
-        HTTPManager.shared.executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
+        HTTPManager(session: URLSession.shared).executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -46,7 +46,7 @@ class EventDetailViewModel {
     }
     
     func sendUserDetail(request: UserDetail, completion: @escaping(Error?) -> Void) {
-        HTTPManager.shared.executeRequest(urlString: EndPoints.checkIn.path, completionBlock: { [weak self] result in
+        HTTPManager(session: URLSession.shared).executeRequest(urlString: EndPoints.checkIn.path, completionBlock: { [weak self] result in
             guard let self = self else { return }
             
             switch result {

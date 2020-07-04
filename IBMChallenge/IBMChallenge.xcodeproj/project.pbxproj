@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F17792724B0D00C00B6C163 /* HTTPManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17792624B0D00C00B6C163 /* HTTPManagerTests.swift */; };
+		5F17792924B0DC8D00B6C163 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17792824B0DC8D00B6C163 /* URLSession+Extension.swift */; };
+		5F17792B24B0FD6000B6C163 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17792A24B0FD6000B6C163 /* MockURLSession.swift */; };
 		5F33E71F24ACCEC0004C0508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E71E24ACCEC0004C0508 /* AppDelegate.swift */; };
 		5F33E72124ACCEC0004C0508 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E72024ACCEC0004C0508 /* SceneDelegate.swift */; };
 		5F33E72324ACCEC0004C0508 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E72224ACCEC0004C0508 /* EventsListViewController.swift */; };
 		5F33E72624ACCEC0004C0508 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F33E72424ACCEC0004C0508 /* Main.storyboard */; };
 		5F33E72824ACCEC3004C0508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F33E72724ACCEC3004C0508 /* Assets.xcassets */; };
 		5F33E72B24ACCEC3004C0508 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F33E72924ACCEC3004C0508 /* LaunchScreen.storyboard */; };
-		5F33E73624ACCEC3004C0508 /* IBMChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E73524ACCEC3004C0508 /* IBMChallengeTests.swift */; };
+		5F33E73624ACCEC3004C0508 /* EventModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E73524ACCEC3004C0508 /* EventModelTests.swift */; };
 		5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E74924ACED46004C0508 /* EventModel.swift */; };
 		5F33E74C24ACEE11004C0508 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E74B24ACEE11004C0508 /* EventsListViewModel.swift */; };
 		5F33E74E24ACEEC4004C0508 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F33E74D24ACEEC4004C0508 /* HTTPManager.swift */; };
@@ -34,6 +37,8 @@
 		5F6AFFD824AEA0EA0089B6C1 /* IBMChallenge.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F6AFFD724AEA0EA0089B6C1 /* IBMChallenge.strings */; };
 		5F6AFFDA24AEA2C60089B6C1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AFFD924AEA2C60089B6C1 /* String+Extension.swift */; };
 		5F6AFFDC24AEC0B30089B6C1 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AFFDB24AEC0B30089B6C1 /* UserDetail.swift */; };
+		5F6AFFE224B0BC2F0089B6C1 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F6AFFE124B0BC2F0089B6C1 /* mock.json */; };
+		5F6AFFE724B0C65F0089B6C1 /* EventListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AFFE624B0C65F0089B6C1 /* EventListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F17792624B0D00C00B6C163 /* HTTPManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManagerTests.swift; sourceTree = "<group>"; };
+		5F17792824B0DC8D00B6C163 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		5F17792A24B0FD6000B6C163 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		5F33E71B24ACCEC0004C0508 /* IBMChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBMChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F33E71E24ACCEC0004C0508 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F33E72024ACCEC0004C0508 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +64,7 @@
 		5F33E72A24ACCEC3004C0508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F33E72C24ACCEC3004C0508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F33E73124ACCEC3004C0508 /* IBMChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBMChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F33E73524ACCEC3004C0508 /* IBMChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBMChallengeTests.swift; sourceTree = "<group>"; };
+		5F33E73524ACCEC3004C0508 /* EventModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModelTests.swift; sourceTree = "<group>"; };
 		5F33E73724ACCEC3004C0508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F33E74924ACED46004C0508 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		5F33E74B24ACEE11004C0508 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
@@ -78,6 +86,8 @@
 		5F6AFFD724AEA0EA0089B6C1 /* IBMChallenge.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = IBMChallenge.strings; sourceTree = "<group>"; };
 		5F6AFFD924AEA2C60089B6C1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5F6AFFDB24AEC0B30089B6C1 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		5F6AFFE124B0BC2F0089B6C1 /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
+		5F6AFFE624B0C65F0089B6C1 /* EventListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F17792524B0D00C00B6C163 /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F17792624B0D00C00B6C163 /* HTTPManagerTests.swift */,
+			);
+			path = ServiceTests;
+			sourceTree = "<group>";
+		};
 		5F33E71224ACCEC0004C0508 = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +152,10 @@
 		5F33E73424ACCEC3004C0508 /* IBMChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F33E73524ACCEC3004C0508 /* IBMChallengeTests.swift */,
+				5F17792524B0D00C00B6C163 /* ServiceTests */,
+				5F6AFFE324B0C29A0089B6C1 /* ViewModelTests */,
+				5F6AFFDE24B0BAF40089B6C1 /* Mock */,
+				5F6AFFDD24B0BAEA0089B6C1 /* ModelTests */,
 				5F33E73724ACCEC3004C0508 /* Info.plist */,
 			);
 			path = IBMChallengeTests;
@@ -251,6 +272,7 @@
 			children = (
 				5F33E75C24AD6CFA004C0508 /* Double+Extension.swift */,
 				5F6AFFD924AEA2C60089B6C1 /* String+Extension.swift */,
+				5F17792824B0DC8D00B6C163 /* URLSession+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,6 +283,31 @@
 				5F33E75A24AD6A76004C0508 /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5F6AFFDD24B0BAEA0089B6C1 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E73524ACCEC3004C0508 /* EventModelTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		5F6AFFDE24B0BAF40089B6C1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5F6AFFE124B0BC2F0089B6C1 /* mock.json */,
+				5F17792A24B0FD6000B6C163 /* MockURLSession.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		5F6AFFE324B0C29A0089B6C1 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F6AFFE624B0C65F0089B6C1 /* EventListTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6AFFE224B0BC2F0089B6C1 /* mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +432,7 @@
 				5F33E75124ACEF4C004C0508 /* EndPoints.swift in Sources */,
 				5F33E74A24ACED46004C0508 /* EventModel.swift in Sources */,
 				5F43640C24AE4E7700061DA8 /* MapLocationTableViewCell.swift in Sources */,
+				5F17792924B0DC8D00B6C163 /* URLSession+Extension.swift in Sources */,
 				5F33E72124ACCEC0004C0508 /* SceneDelegate.swift in Sources */,
 				5F33E74C24ACEE11004C0508 /* EventsListViewModel.swift in Sources */,
 				5F6AFFD624AE715D0089B6C1 /* CellLineModel.swift in Sources */,
@@ -394,7 +443,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F33E73624ACCEC3004C0508 /* IBMChallengeTests.swift in Sources */,
+				5F17792B24B0FD6000B6C163 /* MockURLSession.swift in Sources */,
+				5F6AFFE724B0C65F0089B6C1 /* EventListTests.swift in Sources */,
+				5F33E73624ACCEC3004C0508 /* EventModelTests.swift in Sources */,
+				5F17792724B0D00C00B6C163 /* HTTPManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
