@@ -46,7 +46,15 @@ class EventDetailViewModel {
     }
     
     func sendUserDetail(request: UserDetail, completion: @escaping(Error?) -> Void) {
-        HTTPManager(session: URLSession.shared).executeRequest(urlString: EndPoints.checkIn.path, completionBlock: { [weak self] result in
+        var dictionary: [String: String] = [:]
+        
+        do {
+            dictionary = try JSONDecoder().decode([String: String].self, from: JSONEncoder().encode(request))
+        } catch let error {
+            completion(error)
+        }
+        
+        HTTPManager(session: URLSession.shared).executeRequest(request: dictionary, type: .POST, urlString: EndPoints.checkIn.path, completionBlock: { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -57,7 +65,7 @@ class EventDetailViewModel {
                 do {
                     self.event = try decoder.decode(EventModel.self, from: data)
                     completion(nil)
-                } catch {
+                } catch let error {
                     completion(error)
                 }
             }

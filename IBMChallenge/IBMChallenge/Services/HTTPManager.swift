@@ -68,7 +68,7 @@ class HTTPManager {
             return
         }
         
-        let requestDictionary = createRequest(request: request, type: type, url: url)
+        let requestDictionary = createURLRequest(request: request, type: type, url: url)
         
         let task = session.dataTask(with: requestDictionary) { data, response, error in
             guard error == nil else {
@@ -93,7 +93,7 @@ class HTTPManager {
     
     // MARK: - Private Methods -
     
-    private func createRequest(request: [String: String], type: HTTPMethod, url: URL) -> URLRequest {
+    private func createURLRequest(request: [String: String], type: HTTPMethod, url: URL) -> URLRequest {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = type.rawValue
         

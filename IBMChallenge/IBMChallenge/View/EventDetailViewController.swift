@@ -86,11 +86,11 @@ extension EventDetailViewController {
             if let name = nameText, let email = emailText {
                 self.eventDetailViewModel.sendUserDetail(request: UserDetail(eventId: self.eventDetailViewModel.event.id ?? "", name: name, email: email)) { (error) in
                     if error == nil {
-                        if email.isValidEmail() {
+//                        if email.isValidEmail() {
                             Utils.alert(self, "service_success".text())
-                        } else {
-                            Utils.alert(self, "alert_email_error".text())
-                        }
+//                        } else {
+//                            Utils.alert(self, "alert_email_error".text())
+//                        }
                     } else {
                         Utils.alert(self, error?.localizedDescription ?? "service_error".text())
                     }
