@@ -34,16 +34,43 @@ class IBMChallengeTests: XCTestCase {
         XCTAssertEqual(formattedDate, "20/05/50605")
     }
     
+    func testFormatDateNil() {
+        var customModel = EventModel()
+        let formattedDate = customModel.formattedDate
+        
+        customModel.date = nil
+        
+        XCTAssertEqual(formattedDate, "31/12/1969")
+    }
+    
     func testFormatPrice() {
         let formattedPrice = model.formattedPrice
         
         XCTAssertEqual(formattedPrice, "R$\u{00a0}59,99")
     }
     
+    func testFormatPriceNil() {
+        var customModel = EventModel()
+        let formattedPrice = customModel.formattedPrice
+        
+        customModel.price = nil
+        
+        XCTAssertEqual(formattedPrice, "R$\u{00a0}0,00")
+    }
+    
     func testFormatDescription() {
         let formattedDescription = model.formattedDescription
         
         XCTAssertEqual(formattedDescription, "Description \n Test")
+    }
+    
+    func testFormatDescriptionNil() {
+        var customModel = EventModel()
+        let formattedDescription = customModel.formattedDescription
+        
+        customModel.description = nil
+        
+        XCTAssertEqual(formattedDescription, "")
     }
 
     func testJSONParsing() throws {

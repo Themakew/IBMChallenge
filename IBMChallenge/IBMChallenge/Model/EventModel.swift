@@ -62,7 +62,7 @@ struct EventModel: Codable {
     }
     
     private func formatPrice(_ price: Double) -> String {
-        return price.monetaryValueWithCurrency ?? "-"
+        return price.monetaryValueWithCurrency!
     }
     
     private func formatDescription(_ description: String) -> String {

@@ -33,9 +33,7 @@ class HTTPManagerTests: XCTestCase {
     func testRequestWithURL() {
         let requestURL = URL(string: url)
         
-        httpManager.executeRequest(urlString: url) { result in
-            // Return data
-        }
+        executeRequest()
         
         XCTAssertTrue(session.lastURL == requestURL)
     }
@@ -44,9 +42,7 @@ class HTTPManagerTests: XCTestCase {
         let dataTask = MockURLSessionDataTask()
         session.nextDataTask = dataTask
         
-        httpManager.executeRequest(urlString: url) { result in
-            // Return data
-        }
+        executeRequest()
         
         XCTAssert(dataTask.resumeWasCalled)
     }
@@ -152,5 +148,11 @@ class HTTPManagerTests: XCTestCase {
         }
         
         XCTAssertTrue(actualError?.localizedDescription == "Url inválida, tente novamente.")
+    }
+    
+    func executeRequest() {
+        httpManager.executeRequest(urlString: url) { result in
+            // Return data
+        }
     }
 }

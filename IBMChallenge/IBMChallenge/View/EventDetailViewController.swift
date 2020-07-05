@@ -18,7 +18,7 @@ class EventDetailViewController: UIViewController {
     
     var id: String
     
-    private var eventDetailViewModel = EventDetailViewModel()
+    private var eventDetailViewModel = EventDetailViewModel(httpManager: HTTPManager(session: URLSession.shared))
     private var eventList: [CellLineModel] = []
     
     // MARK: - Init -

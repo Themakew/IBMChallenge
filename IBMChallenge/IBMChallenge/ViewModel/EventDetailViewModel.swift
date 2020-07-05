@@ -15,19 +15,20 @@ class EventDetailViewModel {
     // MARK: - Properties -
     
     var event = EventModel()
+    var httpManagerInstance: HTTPManager?
     
     // MARK: - Init -
     
-    init(model: EventModel? = nil) {
-        if let inputModel = model {
-            event = inputModel
+    init(httpManager: HTTPManager?) {
+        if let instance = httpManager {
+            httpManagerInstance = instance
         }
     }
     
     // MARK: - Internal Methods -
     
     func getEventDetail(id: String, completion: @escaping(Result<EventModel, Error>) -> Void) {
-        HTTPManager(session: URLSession.shared).executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
+        httpManagerInstance?.executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
             guard let self = self else { return }
             
             switch result {

@@ -18,7 +18,7 @@ class EventsListViewController: UIViewController {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     private var data = [EventModel]()
-    private var eventsListViewModel = EventsListViewModel()
+    private var eventsListViewModel = EventsListViewModel(httpManager: HTTPManager(session: URLSession.shared))
     
     // MARK: - View Lifecycle -
     

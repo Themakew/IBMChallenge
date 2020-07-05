@@ -15,19 +15,20 @@ class EventsListViewModel {
     // MARK: - Properties -
     
     var events = [EventModel]()
+    var httpManagerInstance: HTTPManager?
     
     // MARK: - Init -
     
-    init(model: [EventModel]? = nil) {
-        if let inputModel = model {
-            events = inputModel
+    init(httpManager: HTTPManager?) {
+        if let instance = httpManager {
+            httpManagerInstance = instance
         }
     }
 
     // MARK: - Internal Methods -
     
     func getEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
-        HTTPManager(session: URLSession.shared).executeRequest(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
+        httpManagerInstance?.executeRequest(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
             
             guard let self = self else { return }
             
