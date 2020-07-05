@@ -23,6 +23,7 @@
                         </constraints>
                     </mapView>
                 </subviews>
+                <color key="backgroundColor" red="0.031372549019607843" green="0.19215686274509802" blue="0.37254901960784315" alpha="0.099884463028169015" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="PRk-Pe-FIC" secondAttribute="trailing" constant="20" id="MxZ-nQ-E6s"/>
                     <constraint firstAttribute="bottom" secondItem="PRk-Pe-FIC" secondAttribute="bottom" constant="20" id="Uxh-Zb-h1H"/>
