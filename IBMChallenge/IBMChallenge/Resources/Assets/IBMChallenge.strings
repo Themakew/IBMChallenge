@@ -16,7 +16,7 @@
 "vouchers" = "Cupons";
 
 "check_in" = "Check-In";
-"check_in_description" = "Preencha com os dados para fazer o check-in";
+"check_in_description" = "Preencha para fazer o check-in";
 
 "name" = "Informe o seu nome";
 "email" = "Informe o seu e-mail";
