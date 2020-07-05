@@ -196,7 +196,7 @@
         <!--Detalhe-->
         <scene sceneID="34f-ns-Jxn">
             <objects>
-                <viewController id="1jL-RJ-5aj" customClass="EventDetailViewController" customModule="IBMChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailViewController" id="1jL-RJ-5aj" customClass="EventDetailViewController" customModule="IBMChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRh-5L-EG3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

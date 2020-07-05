@@ -83,17 +83,20 @@ extension EventDetailViewController {
     @IBAction
     func checkInAction(_ sender: Any) {
         Utils.setTextFieldAlert(viewController: self) { (nameText, emailText) in
-            if let name = nameText, let email = emailText {
-                self.eventDetailViewModel.sendUserDetail(request: UserDetail(eventId: self.eventDetailViewModel.event.id ?? "", name: name, email: email)) { (error) in
-                    if error == nil {
-//                        if email.isValidEmail() {
+            if let name = nameText,
+                let email = emailText,
+                !name.isEmpty,
+                !email.isEmpty {
+                if email.isValidEmail() {
+                    self.eventDetailViewModel.sendUserDetail(request: UserDetail(eventId: self.eventDetailViewModel.event.id ?? "", name: name, email: email)) { (error) in
+                        if error == nil {
                             Utils.alert(self, "service_success".text())
-//                        } else {
-//                            Utils.alert(self, "alert_email_error".text())
-//                        }
-                    } else {
-                        Utils.alert(self, error?.localizedDescription ?? "service_error".text())
+                        } else {
+                            Utils.alert(self, error?.localizedDescription ?? "service_error".text())
+                        }
                     }
+                } else {
+                    Utils.alert(self, "alert_emaiul_error".text())
                 }
             } else {
                 Utils.alert(self, "alert_empty_fields".text())

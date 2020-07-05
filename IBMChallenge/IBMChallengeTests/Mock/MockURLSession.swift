@@ -2,7 +2,7 @@
 //  MockURLSession.swift
 //  IBMChallengeTests
 //
-//  Created by Foton on 04/07/20.
+//  Created by Ruyther on 04/07/20.
 //  Copyright © 2020 ruyther. All rights reserved.
 //
 
