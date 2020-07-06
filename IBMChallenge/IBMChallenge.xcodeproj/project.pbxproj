@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F0AA21124B2734E0051C48D /* HTTPManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA21024B2734E0051C48D /* HTTPManagerMock.swift */; };
 		5F0AA21324B2A4050051C48D /* EventDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA21224B2A4050051C48D /* EventDetailTests.swift */; };
+		5F0AA21624B2BE490051C48D /* String+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA21524B2BE490051C48D /* String+ExtensionTests.swift */; };
 		5F17792724B0D00C00B6C163 /* HTTPManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17792624B0D00C00B6C163 /* HTTPManagerTests.swift */; };
 		5F17792924B0DC8D00B6C163 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17792824B0DC8D00B6C163 /* URLSession+Extension.swift */; };
 		5F17792B24B0FD6000B6C163 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F17792A24B0FD6000B6C163 /* MockURLSession.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		5F0AA21024B2734E0051C48D /* HTTPManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManagerMock.swift; sourceTree = "<group>"; };
 		5F0AA21224B2A4050051C48D /* EventDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTests.swift; sourceTree = "<group>"; };
+		5F0AA21524B2BE490051C48D /* String+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionTests.swift"; sourceTree = "<group>"; };
 		5F17792624B0D00C00B6C163 /* HTTPManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManagerTests.swift; sourceTree = "<group>"; };
 		5F17792824B0DC8D00B6C163 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		5F17792A24B0FD6000B6C163 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0AA21424B2BE290051C48D /* ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F0AA21524B2BE490051C48D /* String+ExtensionTests.swift */,
+			);
+			path = ExtensionTests;
+			sourceTree = "<group>";
+		};
 		5F17792524B0D00C00B6C163 /* ServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		5F33E73424ACCEC3004C0508 /* IBMChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				5F0AA21424B2BE290051C48D /* ExtensionTests */,
 				5F6AFFDE24B0BAF40089B6C1 /* Mock */,
 				5F17792524B0D00C00B6C163 /* ServiceTests */,
 				5F6AFFDD24B0BAEA0089B6C1 /* ModelTests */,
@@ -450,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F17792B24B0FD6000B6C163 /* MockURLSession.swift in Sources */,
+				5F0AA21624B2BE490051C48D /* String+ExtensionTests.swift in Sources */,
 				5F6AFFE724B0C65F0089B6C1 /* EventListTests.swift in Sources */,
 				5F33E73624ACCEC3004C0508 /* EventModelTests.swift in Sources */,
 				5F0AA21124B2734E0051C48D /* HTTPManagerMock.swift in Sources */,

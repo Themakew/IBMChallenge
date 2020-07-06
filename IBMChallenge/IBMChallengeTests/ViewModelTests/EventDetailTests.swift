@@ -69,5 +69,58 @@ class EventDetailTests: XCTestCase {
             }
         }
     }
+    
+    func testSendCheckInAndWithSuccess() {
+        viewModel = EventDetailViewModel(httpManager: httpMockDecodingSuccess)
+        let object = UserDetail(eventId: "", name: "", email: "")
+        
+        let expectedModel = EventModel(people: [EventModel.People(id: "1",
+                                   eventId: "1",
+                                   name: "name 1",
+                                   picture: "picture 1")],
+        date: 1534784400000,
+        description: "Description",
+        image: "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png",
+        longitude: -51.2146267,
+        latitude: -30.0392981,
+        price: 29.99,
+        title: "Title",
+        id: "1",
+        voucher: [EventModel.Voucher(id: "1",
+                                     eventId: "1",
+                                     discount: 62)])
+        
+        viewModel.sendUserDetail(request: object) { error in
+            XCTAssertTrue(self.viewModel.event.image == expectedModel.image)
+        }
+    }
+    
+    func testSendCheckInAndNotDecode() {
+        viewModel = EventDetailViewModel(httpManager: httpMockDecodingError)
+        let object = UserDetail(eventId: "", name: "", email: "")
+        
+        viewModel.sendUserDetail(request: object) { error in
+            XCTAssertTrue(error?.localizedDescription == "The data couldn’t be read because it isn’t in the correct format.")
+        }
+    }
+    
+    func testSendCheckInAndReturnFailure() {
+        viewModel = EventDetailViewModel(httpManager: httpMockErrorReturn)
+        let object = UserDetail(eventId: "", name: "", email: "")
+        
+        viewModel.sendUserDetail(request: object) { error in
+            XCTAssertTrue(error?.localizedDescription == "The operation couldn’t be completed. (Test error 404.)")
+        }
+    }
+    
+    func testBuildEventList() {
+        viewModel = EventDetailViewModel(httpManager: httpMockDecodingSuccess)
+        
+        let object = MapLine(latitude: 10.0, longitude: 10.0)
+        let actualList = viewModel.buildEventList(eventList: [object])
+        let returnFirstObject = actualList[0] as! MapLine
+        
+        XCTAssertTrue(returnFirstObject.latitude == object.latitude)
+    }
 }
 

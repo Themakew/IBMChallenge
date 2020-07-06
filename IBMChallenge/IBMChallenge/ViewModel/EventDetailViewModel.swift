@@ -53,9 +53,7 @@ class EventDetailViewModel {
             completion(error)
         }
         
-        HTTPManager(session: URLSession.shared).executeRequest(request: dictionary, type: .POST, urlString: EndPoints.checkIn.path, completionBlock: { [weak self] result in
-            guard let self = self else { return }
-            
+        httpManagerInstance?.executeRequest(request: dictionary, type: .POST, urlString: EndPoints.checkIn.path, completionBlock: { result in
             switch result {
             case .failure(let error):
                 completion(error)
