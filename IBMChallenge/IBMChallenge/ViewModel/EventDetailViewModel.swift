@@ -77,8 +77,17 @@ class EventDetailViewModel {
         list.append(TwoColumnInfoLine(title: "description".text(comment: "", suffix: ":"), description: event.description ?? ""))
         list.append(TwoColumnInfoLine(title: "date".text(comment: "", suffix: ":"), description: event.formattedDate ?? ""))
         list.append(TwoColumnInfoLine(title: "price".text(comment: "", suffix: ":"), description: event.formattedPrice ?? ""))
-        list.append(TwoColumnInfoLine(title: "vouchers".text(comment: "", suffix: ":"), description: event.voucher?[0].discount?.monetaryValueWithCurrency ?? ""))
+        list.append(TwoColumnInfoLine(title: "vouchers".text(comment: "", suffix: ":"), description: getFinalDiscountString(discountList: event.voucher ?? [])))
         
         return list
+    }
+    
+    private func getFinalDiscountString(discountList: [EventModel.Voucher]) -> String {
+        var finalDiscountString: String = ""
+        for price in (event.voucher ?? []) {
+            finalDiscountString += "\(price.discount?.monetaryValueWithCurrency ?? "")\n"
+        }
+        
+        return finalDiscountString
     }
 }
