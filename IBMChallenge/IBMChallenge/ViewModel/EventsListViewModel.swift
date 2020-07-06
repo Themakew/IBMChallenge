@@ -28,13 +28,10 @@ class EventsListViewModel {
     // MARK: - Internal Methods -
     
     func getEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
-        httpManagerInstance?.executeRequest(urlString: EndPoints.events.path, completionBlock: { [weak self] result in
-            
-            guard let self = self else { return }
-            
+        httpManagerInstance?.executeRequest(urlString: EndPoints.events.path, completionBlock: { result in
             switch result {
             case .failure(let error):
-                print("failure".text(), error)
+                completion(.failure(error))
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {

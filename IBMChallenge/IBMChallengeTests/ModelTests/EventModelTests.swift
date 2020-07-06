@@ -14,7 +14,7 @@ class IBMChallengeTests: XCTestCase {
     var model: EventModel!
     var modelResponse: [EventModel] = []
     
-    override func setUpWithError() throws {
+    override func setUp() {
         super.setUp()
         
         model = EventModel()
@@ -23,7 +23,7 @@ class IBMChallengeTests: XCTestCase {
         model.description = "Description \n\n Test"
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         model = nil
         super.tearDown()
     }

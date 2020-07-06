@@ -12,20 +12,19 @@ import XCTest
 class HTTPManagerTests: XCTestCase {
     
     var httpManager: HTTPManager!
-    var httpManagerForError: HTTPManager!
     
-    let session = MockURLSession()
-    let sessionError = MockURLSessionError()
-    let url = "https://mockurl"
+    let sessionSuccess = MockURLSession()
+    var url = "https://mockurl"
     let invalidURL = ""
     
-    override func setUpWithError() throws {
+    override func setUp() {
         super.setUp()
-        httpManager = HTTPManager(session: session)
-        httpManagerForError = HTTPManager(session: sessionError)
+        httpManager = HTTPManager(session: sessionSuccess)
     }
     
-    override func tearDownWithError() throws {
+    override func tearDown() {
+        httpManager = nil
+        url = ""
         httpManager = nil
         super.tearDown()
     }
@@ -35,12 +34,12 @@ class HTTPManagerTests: XCTestCase {
         
         executeRequest()
         
-        XCTAssertTrue(session.lastURL == requestURL)
+        XCTAssertTrue(sessionSuccess.lastURL == requestURL)
     }
     
     func testRequestResumeCall() throws {
         let dataTask = MockURLSessionDataTask()
-        session.nextDataTask = dataTask
+        sessionSuccess.nextDataTask = dataTask
         
         executeRequest()
         
@@ -50,7 +49,7 @@ class HTTPManagerTests: XCTestCase {
     func testRequestWithError() throws {
         var actualError: String = ""
         
-        session.nextError = NSError(domain: "", code: 404, userInfo: nil) as Error
+        sessionSuccess.nextError = NSError(domain: "", code: 404, userInfo: nil) as Error
         
         httpManager.executeRequest(urlString: url) { result in
             switch result {
@@ -66,7 +65,7 @@ class HTTPManagerTests: XCTestCase {
     
     func testRequestEqual() throws {
         let expectedData = "{}".data(using: .utf8)
-        session.nextData = expectedData
+        sessionSuccess.nextData = expectedData
         
         var actualData: Data?
         httpManager.executeRequest(urlString: url) { result in
@@ -88,7 +87,7 @@ class HTTPManagerTests: XCTestCase {
         let objectEncoded = try JSONEncoder().encode(objectRequest)
         let dictionary = try JSONDecoder().decode([String: String].self, from: JSONEncoder().encode(objectRequest))
         
-        session.nextData = objectEncoded
+        sessionSuccess.nextData = objectEncoded
         
         var actualData: Data?
         httpManager.executeRequest(request: dictionary, type: .POST, urlString: url) { result in
@@ -104,8 +103,6 @@ class HTTPManagerTests: XCTestCase {
     }
     
     func testNilRequest() throws {
-        session.nextData = nil
-        
         var actualData: Data?
         httpManager.executeRequest(urlString: url) { result in
             switch result {
@@ -120,10 +117,8 @@ class HTTPManagerTests: XCTestCase {
     }
     
     func testRequestWithErrorInReturn() throws {
-        let expectedData = "{}".data(using: .utf8)
-        sessionError.nextData = expectedData
-        
         var actualError: Error?
+        
         httpManager.executeRequest(urlString: url) { result in
             switch result {
             case .failure(let error):

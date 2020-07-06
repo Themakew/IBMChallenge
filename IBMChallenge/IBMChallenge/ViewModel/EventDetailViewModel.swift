@@ -28,9 +28,7 @@ class EventDetailViewModel {
     // MARK: - Internal Methods -
     
     func getEventDetail(id: String, completion: @escaping(Result<EventModel, Error>) -> Void) {
-        httpManagerInstance?.executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { [weak self] result in
-            guard let self = self else { return }
-            
+        httpManagerInstance?.executeRequest(urlString: EndPoints.eventDetail(id: id).path, completionBlock: { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))

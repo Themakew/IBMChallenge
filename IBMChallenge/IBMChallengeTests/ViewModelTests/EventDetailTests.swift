@@ -1,27 +1,27 @@
 //
-//  EventListTests.swift
+//  EventDetailTests.swift
 //  IBMChallengeTests
 //
-//  Created by Ruyther on 04/07/20.
+//  Created by Ruyther on 05/07/20.
 //  Copyright © 2020 ruyther. All rights reserved.
 //
 
 import XCTest
 @testable import IBMChallenge
 
-class EventListTests: XCTestCase {
+class EventDetailTests: XCTestCase {
     
     let sessionSuccess = MockURLSession()
     
-    var viewModel: EventsListViewModel!
-    var httpMockDecodingSuccess: HTTPManagerMockSuccessReturnOne!
+    var viewModel: EventDetailViewModel!
+    var httpMockDecodingSuccess: HTTPManagerMockSuccessReturnSingleObject!
     var httpMockDecodingError: HTTPManagerMockSuccessReturnTwo!
     var httpMockErrorReturn: HTTPManagerMockErrorReturn!
 
     override func setUp() {
         super.setUp()
 
-        httpMockDecodingSuccess = HTTPManagerMockSuccessReturnOne(session: sessionSuccess)
+        httpMockDecodingSuccess = HTTPManagerMockSuccessReturnSingleObject(session: sessionSuccess)
         httpMockDecodingError = HTTPManagerMockSuccessReturnTwo(session: sessionSuccess)
         httpMockErrorReturn = HTTPManagerMockErrorReturn(session: sessionSuccess)
     }
@@ -31,10 +31,10 @@ class EventListTests: XCTestCase {
         super.tearDown()
     }
 
-    func testReceiveEventListAndDecode() {
-        viewModel = EventsListViewModel(httpManager: httpMockDecodingSuccess)
+    func testReceiveEventDetailAndDecode() {
+        viewModel = EventDetailViewModel(httpManager: httpMockDecodingSuccess)
         
-        viewModel.getEvents { result in
+        viewModel.getEventDetail(id: "1") { result in
             switch result {
             case .failure(let error):
                 XCTFail("TestGetEventList failed, error: \(error)")
@@ -44,10 +44,10 @@ class EventListTests: XCTestCase {
         }
     }
     
-    func testReceiveEventListAndNotDecode() {
-        viewModel = EventsListViewModel(httpManager: httpMockDecodingError)
+    func testReceiveEventDetailAndNotDecode() {
+        viewModel = EventDetailViewModel(httpManager: httpMockDecodingError)
         
-        viewModel.getEvents { result in
+        viewModel.getEventDetail(id: "1") { result in
             switch result {
             case .failure(let error):
                 XCTAssertNotNil(error)
@@ -57,10 +57,10 @@ class EventListTests: XCTestCase {
         }
     }
     
-    func testReceiveEventListAndReturnFailure() {
-        viewModel = EventsListViewModel(httpManager: httpMockErrorReturn)
+    func testReceiveEventDetailAndReturnFailure() {
+        viewModel = EventDetailViewModel(httpManager: httpMockErrorReturn)
         
-        viewModel.getEvents { result in
+        viewModel.getEventDetail(id: "1") { result in
             switch result {
             case .failure(let error):
                 XCTAssertNotNil(error)
@@ -70,3 +70,4 @@ class EventListTests: XCTestCase {
         }
     }
 }
+
