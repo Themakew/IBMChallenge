@@ -26,7 +26,7 @@ struct EventModel: Codable {
     var id: String?
     var voucher: [Voucher]?
     
-    var formattedDate: String? { return formatDate(date ?? 0.0) }
+    var formattedDate: String? { return formatDate(date ?? 1534784400000) }
     var formattedPrice: String? { return formatPrice(price ?? 0.0) }
     var formattedDescription: String? { return formatDescription(description ?? "") }
     

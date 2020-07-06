@@ -40,7 +40,7 @@ class IBMChallengeTests: XCTestCase {
         
         customModel.date = nil
         
-        XCTAssertEqual(formattedDate, "31/12/1969")
+        XCTAssertEqual(formattedDate, "20/05/50605")
     }
     
     func testFormatPrice() {
