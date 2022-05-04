@@ -72,7 +72,7 @@ class EventDetailViewModel {
     func buildEventList(eventList: [CellLineModel]) -> [CellLineModel] {
         var list = eventList
         list.append(MapLine(latitude: event.latitude ?? 0.0, longitude: event.longitude ?? 0.0))
-        list.append(InfoLine(title: "responsable".text(comment: "", suffix: ":"), imageName: event.people?[0].picture ?? "user", description: event.people?[0].name ?? ""))
+        list.append(InfoLine(title: "responsable".text(comment: "", suffix: ":"), imageName: "imageName", description: "Name"))
         list.append(TwoColumnInfoLine(title: "event".text(comment: "", suffix: ":"), description: event.title ?? ""))
         list.append(TwoColumnInfoLine(title: "description".text(comment: "", suffix: ":"), description: event.description ?? ""))
         list.append(TwoColumnInfoLine(title: "date".text(comment: "", suffix: ":"), description: event.formattedDate ?? ""))

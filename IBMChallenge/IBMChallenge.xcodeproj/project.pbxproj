@@ -114,6 +114,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56DD847128220B5F00D7801F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E74224ACD0CB004C0508 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		56DD847228220B6700D7801F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				56DD847728220C5600D7801F /* UseCases */,
+				56DD847628220C4700D7801F /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		56DD847328220B7600D7801F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				56DD847E28220E3700D7801F /* UI */,
+				5F33E74424ACD0EA004C0508 /* Models */,
+				56DD847528220C0900D7801F /* Features */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		56DD847528220C0900D7801F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				56DD847928220DB000D7801F /* EventDetail */,
+				56DD847828220D9C00D7801F /* EventsList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		56DD847628220C4700D7801F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		56DD847728220C5600D7801F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		56DD847828220D9C00D7801F /* EventsList */ = {
+			isa = PBXGroup;
+			children = (
+				56DD847B28220DE900D7801F /* View */,
+				56DD847A28220DE000D7801F /* ViewModel */,
+			);
+			path = EventsList;
+			sourceTree = "<group>";
+		};
+		56DD847928220DB000D7801F /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				56DD847D28220DFF00D7801F /* View */,
+				56DD847C28220DF900D7801F /* ViewModel */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		56DD847A28220DE000D7801F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E74B24ACEE11004C0508 /* EventsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56DD847B28220DE900D7801F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E72224ACCEC0004C0508 /* EventsListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DD847C28220DF900D7801F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56DD847D28220DFF00D7801F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DD847E28220E3700D7801F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E74624ACD100004C0508 /* Layout */,
+				56DD847F28220E4300D7801F /* Common */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		56DD847F28220E4300D7801F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				56DD848028220E4D00D7801F /* Cells */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		56DD848028220E4D00D7801F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F33E75324ACF172004C0508 /* EventTableViewCell.swift */,
+				5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */,
+				5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */,
+				5F43640A24AE4E7700061DA8 /* MapLocationTableViewCell.swift */,
+				5F43640E24AE682F00061DA8 /* GenericTwoColumnTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		5F0AA21424B2BE290051C48D /* ExtensionTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,14 +280,13 @@
 		5F33E71D24ACCEC0004C0508 /* IBMChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				56DD847128220B5F00D7801F /* Data */,
+				56DD847228220B6700D7801F /* Domain */,
+				56DD847328220B7600D7801F /* Presentation */,
 				5F33E74824ACD167004C0508 /* AppDelegate */,
-				5F33E74224ACD0CB004C0508 /* Services */,
 				5F33E74124ACD0BE004C0508 /* Resources */,
 				5F33E75824AD6A14004C0508 /* Extensions */,
 				5F33E75924AD6A61004C0508 /* Utils */,
-				5F33E74424ACD0EA004C0508 /* Model */,
-				5F33E74524ACD0F5004C0508 /* ViewModel */,
-				5F33E74024ACD0AA004C0508 /* View */,
 			);
 			path = IBMChallenge;
 			sourceTree = "<group>";
@@ -176,17 +304,6 @@
 			path = IBMChallengeTests;
 			sourceTree = "<group>";
 		};
-		5F33E74024ACD0AA004C0508 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5F33E72224ACCEC0004C0508 /* EventsListViewController.swift */,
-				5F33E75E24AD7D4D004C0508 /* EventDetailViewController.swift */,
-				5F33E75224ACF15B004C0508 /* Cells */,
-				5F33E74624ACD100004C0508 /* Layout */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		5F33E74124ACD0BE004C0508 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,33 +313,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		5F33E74224ACD0CB004C0508 /* Services */ = {
+		5F33E74224ACD0CB004C0508 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				5F33E74F24ACEF37004C0508 /* EndPoints */,
 				5F33E74D24ACEEC4004C0508 /* HTTPManager.swift */,
 			);
-			path = Services;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		5F33E74424ACD0EA004C0508 /* Model */ = {
+		5F33E74424ACD0EA004C0508 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5F33E74924ACED46004C0508 /* EventModel.swift */,
 				5F6AFFD524AE715D0089B6C1 /* CellLineModel.swift */,
 				5F6AFFDB24AEC0B30089B6C1 /* UserDetail.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5F33E74524ACD0F5004C0508 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				5F33E75524AD15D4004C0508 /* Cells */,
-				5F33E74B24ACEE11004C0508 /* EventsListViewModel.swift */,
-				5F43640824AE3E2000061DA8 /* EventDetailViewModel.swift */,
-			);
-			path = ViewModel;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5F33E74624ACD100004C0508 /* Layout */ = {
@@ -261,25 +368,6 @@
 				5F33E75024ACEF4C004C0508 /* EndPoints.swift */,
 			);
 			path = EndPoints;
-			sourceTree = "<group>";
-		};
-		5F33E75224ACF15B004C0508 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5F33E75324ACF172004C0508 /* EventTableViewCell.swift */,
-				5F43640424AE3B4A00061DA8 /* EventResponsableTableViewCell.swift */,
-				5F43640A24AE4E7700061DA8 /* MapLocationTableViewCell.swift */,
-				5F43640E24AE682F00061DA8 /* GenericTwoColumnTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		5F33E75524AD15D4004C0508 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5F33E75624AD15F2004C0508 /* EventTableViewCellViewModel.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		5F33E75824AD6A14004C0508 /* Extensions */ = {

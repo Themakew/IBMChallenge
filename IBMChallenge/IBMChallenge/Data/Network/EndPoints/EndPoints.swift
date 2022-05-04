@@ -17,11 +17,11 @@ enum EndPoints {
     var path: String {
         switch self {
         case .events:
-            return "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events"
+            return "http://5f5a8f24d44d640016169133.mockapi.io/api/events"
         case .checkIn:
-            return "http://5b840ba5db24a100142dcd8c.mockapi.io/api/checkin"
+            return "http://5f5a8f24d44d640016169133.mockapi.io/api/checkin"
         case .eventDetail(let id):
-            return String(format: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events/%@", id)
+            return String(format: "http://5f5a8f24d44d640016169133.mockapi.io/api/events/%@", id)
         }
     }
 }
